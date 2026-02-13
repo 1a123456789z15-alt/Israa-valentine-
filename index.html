@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إسراء ❤️</title>
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff416c,#ff4b2b);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.lock{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+input{
+padding:12px;
+border-radius:20px;
+border:none;
+margin:10px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-size:16px;
+}
+
+.section{
+padding:50px 20px;
+}
+
+img{
+width:280px;
+border-radius:20px;
+margin:15px;
+box-shadow:0 0 20px rgba(255,255,255,0.7);
+}
+
+.hidden{
+display:none;
+}
+
+.heart{
+position:fixed;
+color:white;
+animation:float 4s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+</style>
+</head>
+<body>
+
+<div id="lockScreen" class="lock">
+<h2>🔒 موقع خاص لإسراء أحمد حسين</h2>
+<input type="password" id="pass" placeholder="ادخل الرقم السري">
+<button onclick="unlock()">دخول ❤️</button>
+</div>
+
+<div id="siteContent" class="hidden">
+
+<div class="section">
+<h1>Happy Valentine’s Day ❤️</h1>
+<p>إسراء أحمد حسين 💖</p>
+<img src="main.jpg">
+</div>
+
+<div class="section">
+<h2>✨ أول مرة شوفتك فيها</h2>
+<img src="firstmeet.jpg">
+<p>
+اليوم ده كان بداية أجمل قصة في حياتي ❤️ <br>
+The day I first saw you… my life changed forever.
+</p>
+</div>
+
+<div class="section">
+<h2>👶 من الطفولة لحد ما بقت نصيبي</h2>
+<img src="child.jpg">
+</div>
+
+<div class="section">
+<h2>📸 أجمل لحظاتك</h2>
+<img src="pic1.jpg">
+<img src="pic2.jpg">
+</div>
+
+<div class="section">
+<button onclick="openSong()">🎵 اسمعي أول أغنية ليكي مني 💍</button>
+</div>
+
+<div class="section">
+<h2>💌 رسالة خاصة</h2>
+<p>
+أوعدك قدام ربنا إني أختارك كل يوم… <br>
+وأكمل حياتي معاكي ❤️💍 <br>
+I promise to choose you every single day.
+</p>
+
+<button onclick="showSurprise()">مفاجأة ❤️</button>
+
+<div id="surprise" class="hidden">
+<p>💕 اللحظة اللي قلبي قال فيها خلاص دي هي ❤️</p>
+<img src="main.jpg">
+</div>
+
+</div>
+
+</div>
+
+<script>
+function unlock(){
+if(document.getElementById("pass").value === "1811"){
+document.getElementById("lockScreen").style.display="none";
+document.getElementById("siteContent").classList.remove("hidden");
+}else{
+alert("غلط 😏");
+}
+}
+
+function openSong(){
+window.open("https://www.youtube.com/results?search_query=أخيرًا+قالها+عمرو+دياب");
+}
+
+function showSurprise(){
+document.getElementById("surprise").classList.remove("hidden");
+}
+
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=Math.random()*20+10+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),4000);
+},500);
+</script>
+
+</body>
+</html>
